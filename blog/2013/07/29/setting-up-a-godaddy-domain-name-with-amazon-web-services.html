@@ -1,0 +1,247 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Mycow's World by </title>
+
+
+    <link href='https://fonts.googleapis.com/css?family=Arvo:400,700,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/assets/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="/assets/css/style.css">-->
+    <link rel="stylesheet" href="/assets/css/blog.css">
+
+    <script src="/assets/js/scale.fix.js"></script>
+    <script src="/assets/js/jquery-3.2.0.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- HEADER -->
+      <header>
+        <h1 class="header"><a class="header" href="http://localhost:4000">Mycow's World</a></h1>
+        <p class="header">Hi, I'm Michael Li. Welcome to my world.
+</p>
+
+        <!-- icons -->
+        <a class="header" href="http://www.github.com/moduli" target="_blank"><i class="fa fa-github fa-4x fa-hover" aria-hidden="true"></i></a>
+        <a class="header" href="http://www.linkedin.com/in/moduli" target="_blank"><i class="fa fa-linkedin-square fa-4x fa-hover" aria-hidden="true"></i></a>
+        <a class="header" href="mailto:mycowsworld@gmail.com"><i class="fa fa-envelope-square fa-4x fa-hover" aria-hidden="true"></i></a>
+
+
+        <ul>
+          
+        </ul>
+
+        <!-- site links -->
+        <ul>
+          <li><a class="site-links" href="http://localhost:4000">Home</a></li>
+          <li><a class="site-links" href="http://localhost:4000/about">About</a></li>
+          <li><a class="site-links" href="http://localhost:4000/blog">Blog</a></li>
+          <li><a class="site-links" href="#">Projects</a></li>
+        </ul>
+
+        
+
+        
+      </header>
+
+
+      <!-- SECTION -->
+      <section>
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <div class="post-content" itemprop="articleBody">
+
+    <h1 class="post-title" itemprop="name headline">Setting Up a GoDaddy Domain Name with Amazon Web Services</h1>
+    <p class="post-meta">
+        <time datetime="2013-07-29T22:55:00-04:00" itemprop="datePublished">Jul 29, 2013</time>
+        
+    </p>
+    
+    <p>One day, I decided I wanted to start a website. So then… now what? The following post describes the steps I took to purchase a domain name and get it set up with Amazon’s web hosting services.</p>
+
+<!-- more -->
+
+<h2 id="step-1-register-for-a-domain-name">Step 1: Register for a domain name</h2>
+<p>Go to http://www.godaddy.com/ and purchase a domain name (e.g. mycowsworld.com)</p>
+
+<p>This reserves a name that people will use to access your website. Now you’ll need a place to store the files for your website.</p>
+
+<h2 id="step-2-sign-up-for-amazon-web-services-aws">Step 2: Sign up for Amazon Web Services (AWS)</h2>
+<p>Go to https://aws.amazon.com/ and sign up for an account.</p>
+
+<p>Amazon has some nice services for cloud computing. One of these services can be used for website hosting (Amazon S3). AWS costs are scaled based on usage. My current costs are about 50 cents a month to host this blog.</p>
+
+<h2 id="step-3-setup-amazon-s3-simple-storage-service">Step 3: Setup Amazon S3 (Simple Storage Service)</h2>
+<p>In S3, you create “buckets” that will be used to store data. Each bucket can be configured individually, such as changing who has permissions to access a particular bucket.</p>
+
+<p>In this case, we’ll create two buckets: one for mywebsite.com and the other for www.mywebsite.com. We’ll configure it so that the content will be stored in mywebsite.com and that requests for www.mywebsite.com will be redirected to mywebsite.com.</p>
+
+<ol>
+  <li>Click <strong>My Account / Console</strong> on the top-right of the window and select <strong>AWS Management Console</strong></li>
+  <li>Click <strong>Services</strong> at the top-left of the window and select <strong>S3</strong></li>
+  <li>Create two buckets: <strong>mywebsite.com</strong> and <strong>www.mywebsite.com</strong>. Follow these instructions to create a bucket (http://docs.aws.amazon.com/AmazonS3/latest/UG/CreatingaBucket.html).</li>
+</ol>
+
+<h3 id="upload-files-to-the-mywebsitecom-bucket">Upload files to the mywebsite.com bucket</h3>
+<ol>
+<li>Click the <strong>mywebsite.com</strong> bucket</li>
+<li>Click <strong>Upload</strong> at the top-left of the screen</li>
+<li>Click <strong>Add Files</strong> on the pop-up that appears and select the various website files. Multiple files can be selected. (If you do not have website files, you can create a test file with the following code)
+
+<figure class="highlight"><pre><code class="language-none" data-lang="none">&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;body&gt;
+	Hello World
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></figure>
+</li>
+<li>Click <strong>Start Upload</strong> to upload the files to the bucket</li>
+</ol>
+
+<h3 id="configure-bucket-permissions-to-make-it-accessible-to-public">Configure bucket permissions to make it accessible to public</h3>
+<ol>
+<li>Click <strong>Properties</strong> at the top-right of the screen</li>
+<li>Click <strong>Permissions</strong></li>
+<li>Click <strong>Edit Bucket Policy</strong></li>
+<li>Add the following to the text box (note: make sure you replace www.mywebsite.com with your own domain name)
+
+<figure class="highlight"><pre><code class="language-none" data-lang="none">{
+	"Version":"2008-10-17",
+	"Statement":[{
+		"Sid":"AddPerm",
+		"Effect":"Allow",
+		"Principal": {"AWS": "*"},
+		"Action":["s3:GetObject"],
+		"Resource":["arn:aws:s3:::mywebsite.com/*"]
+	}]
+}</code></pre></figure>
+</li>
+<li>Click <strong>Save</strong> on the pop-up window</li>
+<li>Click <strong>Save</strong> in the *Permissions* pane</li>
+</ol>
+<h3 id="configure-bucket-for-website-hosting">Configure bucket for website hosting</h3>
+<ol>
+  <li>In the <em>Properties</em> pane, select <strong>Static Website Hosting</strong></li>
+  <li>Select <strong>Enable website hosting</strong></li>
+  <li>For <em>Index Document</em>, enter in the filename that will be used as the home page for your website. Typically this is <strong>index.html</strong> (make sure this file is uploaded to the bucket!)</li>
+  <li>Click <strong>Save</strong> in the <em>Static Website Hosting</em> pane</li>
+  <li>To test, click the <strong>Endpoint URL</strong> shown in the <em>Static Website Hosting</em> pane and see if your website loads.</li>
+</ol>
+
+<h3 id="redirect-wwwmywebsitecom-requests-to-mywebsitecom">Redirect www.mywebsite.com requests to mywebsite.com</h3>
+<ol>
+  <li>Click <strong>All Buckets</strong> on the top left of the page</li>
+  <li>Click the <strong>www.mywebsite.com</strong> bucket</li>
+  <li>Click <strong>Properties</strong> on the top-right</li>
+  <li>Click <strong>Static Website Hosting</strong></li>
+  <li>Select <strong>Redirect all requests to another host name</strong></li>
+  <li>Type <strong>mywebsite.com</strong> in the <em>Redirect all requests to</em> field</li>
+  <li>Click <strong>Save</strong></li>
+  <li>To test, click the <strong>Endpoint URL</strong> shown in the <em>Static Website Hosting</em> pane and see if your website loads.</li>
+</ol>
+
+<h2 id="step-4-setup-amazon-route-53">Step 4: Setup Amazon Route 53</h2>
+<p>Amazon Route 53 will be used to link the domain name you purchased to the buckets you just created.</p>
+
+<ol>
+  <li>Click <strong>Services</strong> at the top-left of the window and select <strong>Route 53</strong></li>
+  <li>Click <strong>Create Hosted Zone</strong> near the top of the screen</li>
+  <li>On the right side of the screen, enter your domain name (e.g. mywebsite.com)</li>
+  <li>Click <strong>Create Hosted Zone</strong> at the bottom of the panel (After you create a hosted zone, it should appear in the main panel with a check mark)</li>
+  <li>Click <strong>Go to Record Sets</strong> near the top of the screen</li>
+</ol>
+
+<h3 id="create-the-a-record">Create the “A” Record</h3>
+<p>The “A” Record will point mywebsite.com to the S3 bucket</p>
+
+<ol>
+  <li>Click <strong>Create Record Set</strong></li>
+  <li>Change <em>Type</em> to <strong>A - IPv4 address</strong></li>
+  <li>Change <em>Alias</em> to <strong>Yes</strong></li>
+  <li>Click the <em>Alias Target</em> field and select <strong>mywebsite.com (s3-website-*)</strong></li>
+  <li>Click <strong>Create Record Set</strong></li>
+</ol>
+
+<h3 id="create-the-cname-record">Create the “CNAME” Record</h3>
+<p>The “CNAME” Record will redirect www.mywebsite.com requests to mywebsite.com</p>
+
+<ol>
+  <li>Click <strong>Create Record Set</strong></li>
+  <li>In the <em>Name</em> field, add <strong>www.</strong> before <em>mywebsite.com</em></li>
+  <li>Change <em>Type</em> to <strong>CNAME</strong></li>
+  <li>Change <em>Alias</em> to <strong>No</strong></li>
+  <li>In <em>Value</em>, enter in <strong>mywebsite.com</strong></li>
+  <li>Click <strong>Create Record Set</strong></li>
+</ol>
+
+<h2 id="step-5-configure-the-dns-provider-godaddy-to-use-amazon-route-53-name-servers">Step 5: Configure the DNS provider (GoDaddy) to use Amazon Route 53 Name Servers</h2>
+<p>As the DNS provider, you will need to tell GoDaddy to update the Domain Name Servers to point to the Amazon Name Servers.</p>
+
+<ol>
+  <li>In the Record Sets page, note the 4 addresses in the “NS” entry (e.g. ns-123.awsdns-55.net)</li>
+  <li>Log in to GoDaddy.com</li>
+  <li>Click <strong>My Account</strong> at the top of the screen</li>
+  <li>In the <em>DOMAINS</em> pane, click <strong>Launch</strong></li>
+  <li>Click on the Domain Name that you want to edit</li>
+  <li>In the <em>Nameservers</em> section, select <strong>Set Nameservers</strong></li>
+  <li>Select <strong>I have specific nameservers for my domains</strong></li>
+  <li>Set the nameservers to the ones noted in the “NS” entry in Step 5.1 (you can omit the ending period)</li>
+</ol>
+
+<p>Tip from Kelton Manzanares: Make sure you delete the default CNAME record in Godaddy for www for your www. domain to work.</p>
+
+<h2 id="step-6-test-your-website">Step 6: Test your website</h2>
+<p>Try entering your domain name into your web browser. Both mywebsite.com and www.mywebsite.com should work! Note that it may take some time (up to several hours) before these settings are propagated to the various servers on the internet.</p>
+
+<h2 id="what-is-happening">What is happening?</h2>
+<p>The following image helps describe the process when a user enters an address into the web browser.</p>
+
+<p><img src="/assets/posts/2013-07-29-setting-up-a-godaddy-domain-name-with-amazon-web-services/dns_flow_chart.jpg" /></p>
+
+<ul>
+  <li>There are 13 Root Name Servers spread across the world. These servers parse the request for the top level domain (e.g. .com, .net, etc) and pass to the appropriate server</li>
+  <li>Authoritative Name Servers are defined in the Domain Name manager (e.g. GoDaddy.com). We defined the Name Servers to point to the ones provided by Amazon Route 53</li>
+  <li>In Amazon Route 53, we defined the A record to return the IP address of one of the S3 buckets that was created</li>
+  <li>DNS records have a “TTL” (time-to-live) setting which tells the ISP Name server how long it can hold a record before needing to get a new copy in case of changes.</li>
+</ul>
+
+<h2 id="references">References</h2>
+<h3 id="configuring-aws-and-godaddy-settings">Configuring AWS and GoDaddy settings</h3>
+<ul>
+  <li><a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/website-hosting-custom-domain-walkthrough.html">http://docs.aws.amazon.com/AmazonS3/latest/dev/website-hosting-custom-domain-walkthrough.html</a></li>
+  <li><a href="http://steveliles.github.io/pointing_a_domain_name_to_an_amazon_s3_bucket.html">http://steveliles.github.io/pointing_a_domain_name_to_an_amazon_s3_bucket.html</a></li>
+  <li><a href="http://support.godaddy.com/groups/web-hosting/forum/topic/using-amazon-s3-with-godaddy-registered-domain/?pc_split_value=1">http://support.godaddy.com/groups/web-hosting/forum/topic/using-amazon-s3-with-godaddy-registered-domain/?pc_split_value=1</a></li>
+</ul>
+
+<h3 id="dns--how-does-it-work">DNS – How does it work?</h3>
+<ul>
+  <li><a href="http://www.mygreatname.com/how-dns-works/e-04-how-dns-works.htm">http://www.mygreatname.com/how-dns-works/e-04-how-dns-works.htm</a></li>
+  <li><a href="http://dyn.com/blog/dns-why-its-important-how-it-works/">http://dyn.com/blog/dns-why-its-important-how-it-works/</a></li>
+</ul>
+
+  </div>
+
+  
+    
+
+  
+</article>
+
+      </section>
+
+      <!-- FOOTER -->
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com" target="_blank">GitHub Pages</a> using the <a href="https://github.com/pages-themes/dinky" target="_blank">Dinky</a> theme</small></p>
+      </footer>
+    </div>
+
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>

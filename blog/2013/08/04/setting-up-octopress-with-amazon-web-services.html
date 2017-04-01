@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Mycow's World by </title>
+
+
+    <link href='https://fonts.googleapis.com/css?family=Arvo:400,700,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/assets/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="/assets/css/style.css">-->
+    <link rel="stylesheet" href="/assets/css/blog.css">
+
+    <script src="/assets/js/scale.fix.js"></script>
+    <script src="/assets/js/jquery-3.2.0.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- HEADER -->
+      <header>
+        <h1 class="header"><a class="header" href="http://localhost:4000">Mycow's World</a></h1>
+        <p class="header">Hi, I'm Michael Li. Welcome to my world.
+</p>
+
+        <!-- icons -->
+        <a class="header" href="http://www.github.com/moduli" target="_blank"><i class="fa fa-github fa-4x fa-hover" aria-hidden="true"></i></a>
+        <a class="header" href="http://www.linkedin.com/in/moduli" target="_blank"><i class="fa fa-linkedin-square fa-4x fa-hover" aria-hidden="true"></i></a>
+        <a class="header" href="mailto:mycowsworld@gmail.com"><i class="fa fa-envelope-square fa-4x fa-hover" aria-hidden="true"></i></a>
+
+
+        <ul>
+          
+        </ul>
+
+        <!-- site links -->
+        <ul>
+          <li><a class="site-links" href="http://localhost:4000">Home</a></li>
+          <li><a class="site-links" href="http://localhost:4000/about">About</a></li>
+          <li><a class="site-links" href="http://localhost:4000/blog">Blog</a></li>
+          <li><a class="site-links" href="#">Projects</a></li>
+        </ul>
+
+        
+
+        
+      </header>
+
+
+      <!-- SECTION -->
+      <section>
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <div class="post-content" itemprop="articleBody">
+
+    <h1 class="post-title" itemprop="name headline">Setting Up Octopress with Amazon Web Services</h1>
+    <p class="post-meta">
+        <time datetime="2013-08-04T16:48:00-04:00" itemprop="datePublished">Aug 4, 2013</time>
+        
+    </p>
+    
+    <p>When I initially had the idea to start a blog, I was looking up how to set up WordPress with Amazon Web Services (AWS) - the web host I decided to use. Somehow, I ended up stumbling into Jekyll, which later led me to Octopress. The post describes the steps needed to set up Octopress with AWS.</p>
+
+<!-- more -->
+
+<p>There are lots of posts out in the internets that describe other people’s experiences with Octopress. Here are a few…</p>
+
+<ul>
+  <li>http://hiltmon.com/blog/2013/04/17/18-months-of-octopress/</li>
+  <li>http://nynim.org/blog/2011/12/19/hello-octopress/</li>
+  <li>http://openswitch.org/blog/why-octopress/</li>
+</ul>
+
+<p>So how do we get octopress set up with AWS?</p>
+
+<h2 id="step-1-install-octopress">Step 1: Install Octopress</h2>
+<p>Follow the instructions here: http://octopress.org/docs/setup/</p>
+
+<h2 id="step-2-install-s3_website">Step 2: Install s3_website</h2>
+<p>s3_website is a tool used to upload your octopress blog to Amazon S3 (an Amazon Web Service used for web storage). For more information on s3_website, go here: https://github.com/laurilehmijoki/s3_website</p>
+
+<p>In the terminal, enter the following commands:</p>
+
+<figure class="highlight"><pre><code class="language-none" data-lang="none">cd &lt;octopress_blog&gt;
+gem install s3_website
+s3_website cfg create  # creates s3_website.yl (configuration file)</code></pre></figure>
+
+<h2 id="step-3-create-user-in-aws-iam">Step 3: Create User in AWS IAM</h2>
+<p>AWS IAM (Identity and Access Management) is used to manage access to your resources in AWS. In this step, we’ll create a user in IAM that will be used by s3_website.</p>
+
+<ol>
+  <li>Go to https://aws.amazon.com/</li>
+  <li>Click <strong>My Account / Console</strong> on the top-right of the window and select <strong>AWS Management Console</strong></li>
+  <li>Click <strong>Services</strong> at the top-left of the window and select <strong>IAM</strong></li>
+  <li>Click <strong>Users</strong> on the left</li>
+  <li>Click <strong>Create New Users</strong></li>
+  <li>Enter a username and click <strong>Create</strong></li>
+  <li>Expand the <strong>Show User Security Credentials</strong> and copy the <strong>Access Key ID</strong> and <strong>Secret Access Key</strong>. Alternatively, you can click <strong>Download Credentials</strong> to save a text file containing the two keys.</li>
+</ol>
+
+<h2 id="step-4-configure-s3_website">Step 4: Configure s3_website</h2>
+<p>s3_website requires the keys that were obtained in IAM.</p>
+
+<ol>
+  <li>Open <octopress_blog>/s3_website.yml in a text editor</octopress_blog></li>
+  <li>Under <em>s3_id</em>, enter the <strong>Access Key Id</strong></li>
+  <li>Under <em>s3_secret</em>, enter the <strong>Secret Access Key</strong></li>
+  <li>Under <em>s3_bucket</em>, enter the name of the S3 bucket (e.g. mywebsite.com)</li>
+  <li>Save the file</li>
+</ol>
+
+<h2 id="step-5-configure-octopress-for-s3_website">Step 5: Configure Octopress for s3_website</h2>
+<h3 id="_configyml">_config.yml</h3>
+<p>By default, octopress will generate blog files to a directory named <em>public</em>. s3_website currently expects these files to be in <em>_site</em>.</p>
+
+<p>Open <octopress_blog>/_config.yml and set...</octopress_blog></p>
+
+<figure class="highlight"><pre><code class="language-none" data-lang="none">destination: _site</code></pre></figure>
+
+<h3 id="configrb">config.rb</h3>
+<p>Change compass to generate the CSS files to the new destination (_site).</p>
+
+<p>Open <octopress_blog>/config.rb and set...</octopress_blog></p>
+
+<figure class="highlight"><pre><code class="language-none" data-lang="none">css_dir = "_site/stylesheets"</code></pre></figure>
+
+<h3 id="support-bundle-exec-rake-preview-command">Support “bundle exec rake preview” command</h3>
+<p>Open <octopress_blog>/Rakefile and set...</octopress_blog></p>
+
+<figure class="highlight"><pre><code class="language-none" data-lang="none">public_dir = "_site"</code></pre></figure>
+
+<p>Open <octopress_blog>/config.ru and change references of *public* to *_site*...</octopress_blog></p>
+
+<figure class="highlight"><pre><code class="language-none" data-lang="none">...
+not_found do
+  send_file(File.join(File.dirname(__FILE__), '_site', '404.html'), {:status =&gt; 404})
+end
+
+def send_sinatra_file(path, &amp;missing_file_block)
+  file_path = File.join(File.dirname(__FILE__), '_site',  path)
+  file_path = File.join(file_path, 'index.html') unless file_path =~ /\.[a-z]+$/i
+  File.exist?(file_path) ? send_file(file_path) : missing_file_block.call
+end
+...</code></pre></figure>
+
+<h2 id="step-6-test-s3_website">Step 6: Test s3_website</h2>
+<p>In the terminal, enter the following commands:</p>
+
+<figure class="highlight"><pre><code class="language-none" data-lang="none">cd &lt;octopress_blog&gt;
+rake generate
+s3_website push  # pushes website files to s3 bucket</code></pre></figure>
+
+<p>Check mywebsite.com to see if the changes were successful!</p>
+
+<h2 id="references">References</h2>
+<ul>
+  <li>http://www.robertbrewitz.com/2013/04/relaunching-the-blog-with-octopress-and-amazon-s3/</li>
+</ul>
+
+  </div>
+
+  
+    
+
+  
+</article>
+
+      </section>
+
+      <!-- FOOTER -->
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com" target="_blank">GitHub Pages</a> using the <a href="https://github.com/pages-themes/dinky" target="_blank">Dinky</a> theme</small></p>
+      </footer>
+    </div>
+
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>

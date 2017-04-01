@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-04-01T15:51:10-04:00</updated><id>http://localhost:4000/</id><title type="html">Mycow’s World</title><subtitle>Hi, I'm Michael Li. Welcome to my world.
+</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/blog/2017/03/14/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2017-03-14T19:28:53-04:00</published><updated>2017-03-14T19:28:53-04:00</updated><id>http://localhost:4000/blog/2017/03/14/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/blog/2017/03/14/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry><entry><title type="html">Setting Up a GoDaddy Domain Name with GitHub</title><link href="http://localhost:4000/blog/2015/07/12/setting-up-a-godaddy-domain-name-with-github.html" rel="alternate" type="text/html" title="Setting Up a GoDaddy Domain Name with GitHub" /><published>2015-07-12T15:30:00-04:00</published><updated>2015-07-12T15:30:00-04:00</updated><id>http://localhost:4000/blog/2015/07/12/setting-up-a-godaddy-domain-name-with-github</id><content type="html" xml:base="http://localhost:4000/blog/2015/07/12/setting-up-a-godaddy-domain-name-with-github.html">&lt;p&gt;I wanted to try using GitHub’s &lt;a href=&quot;https://pages.github.com&quot;&gt;Pages&lt;/a&gt; feature to host my website. Turns out it was very simple to do, and the best part is it’s free!&lt;/p&gt;
+
+&lt;p&gt;Here’s a tutorial for setting up a GoDaddy domain name with this feature.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h2 id=&quot;step-1-register-for-a-domain-name&quot;&gt;Step 1: Register for a domain name&lt;/h2&gt;
+&lt;p&gt;Go to http://www.godaddy.com/ and purchase a domain name (e.g. mycowsworld.com)&lt;/p&gt;
+
+&lt;p&gt;This reserves a name that people will use to access your website. Now you’ll need a place to store the files for your website.&lt;/p&gt;
+
+&lt;h2 id=&quot;step-2-create-a-github-account&quot;&gt;Step 2: Create a GitHub account&lt;/h2&gt;
+&lt;p&gt;Go to https://github.com and sign up for an account.&lt;/p&gt;
+
+&lt;h2 id=&quot;step-3-create-a-github-repository&quot;&gt;Step 3: Create a GitHub repository&lt;/h2&gt;
+&lt;p&gt;Follow the instructions &lt;a href=&quot;https://pages.github.com&quot;&gt;here&lt;/a&gt; (scroll down). This creates a repository where you will store your website files.&lt;/p&gt;
+
+&lt;h2 id=&quot;step-4-link-your-domain-name-to-the-github-repository&quot;&gt;Step 4: Link your domain name to the GitHub repository&lt;/h2&gt;
+&lt;p&gt;Follow the instructions &lt;a href=&quot;https://help.github.com/articles/adding-a-cname-file-to-your-repository/&quot;&gt;here&lt;/a&gt; to connect your domain name (e.g. www.mycowsworld.com) to the GitHub repository.&lt;/p&gt;
+
+&lt;h2 id=&quot;step-5-configure-dns-settings-on-godaddy&quot;&gt;Step 5: Configure DNS settings on GoDaddy&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Log in to GoDaddy.com&lt;/li&gt;
+  &lt;li&gt;Click &lt;strong&gt;My Account&lt;/strong&gt; at the top of the screen&lt;/li&gt;
+  &lt;li&gt;In the &lt;em&gt;DOMAINS&lt;/em&gt; pane, expand the section (click the + button) and click &lt;strong&gt;Manage&lt;/strong&gt; for the desired domain name.&lt;/li&gt;
+  &lt;li&gt;Under the &lt;em&gt;Settings&lt;/em&gt; tab -&amp;gt; Nameservers, click &lt;strong&gt;Manage&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Ensure that the &lt;em&gt;Setup Type&lt;/em&gt; is set to &lt;strong&gt;Standard&lt;/strong&gt; and save the changes. If you do make changes, note that it may take some time for the changes to propagate.&lt;/li&gt;
+  &lt;li&gt;Under the &lt;em&gt;DNS Zone File&lt;/em&gt; tab, click &lt;strong&gt;Add Record&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Select the &lt;strong&gt;CNAME&lt;/strong&gt; Record Type&lt;/li&gt;
+  &lt;li&gt;Under &lt;em&gt;Host&lt;/em&gt;, enter in your &lt;strong&gt;www&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Under &lt;em&gt;Points to&lt;/em&gt;, enter in the URL of the GitHub repository (e.g. username.github.io)&lt;/li&gt;
+  &lt;li&gt;Click &lt;strong&gt;Finish&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;See &lt;a href=&quot;https://help.github.com/articles/tips-for-configuring-a-cname-record-with-your-dns-provider/&quot;&gt;this page&lt;/a&gt; for more information.&lt;/p&gt;
+
+&lt;p&gt;It will take some time for the changes to get pushed out, but once that happens, www.URL.com should take you to your GitHub page.&lt;/p&gt;
+
+&lt;h2 id=&quot;step-6-redirect-urlcom-to-wwwurlcom&quot;&gt;Step 6: Redirect URL.com to www.URL.com&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Back in the GoDaddy page under the &lt;em&gt;Settings&lt;/em&gt; tab -&amp;gt; Forwarding, click &lt;strong&gt;Manage&lt;/strong&gt; under &lt;em&gt;Domain&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;Click &lt;strong&gt;Add Domain Forwarding&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Under &lt;em&gt;Forward To&lt;/em&gt;, set it to the desired webpage (e.g. http://www.mycowsworld.com)&lt;/li&gt;
+  &lt;li&gt;Under &lt;em&gt;Redirect Type&lt;/em&gt;, set it to &lt;strong&gt;301 Permanent&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Under &lt;em&gt;Forward Settings&lt;/em&gt;, select &lt;strong&gt;Forward Only&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Check the &lt;strong&gt;Update my nameservers and DNS Settings to support this change&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Click &lt;strong&gt;Add&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/23097397/github-pages-setting-up-custom-domain&quot;&gt;http://stackoverflow.com/questions/23097397/github-pages-setting-up-custom-domain&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://help.github.com/articles/tips-for-configuring-a-cname-record-with-your-dns-provider/&quot;&gt;https://help.github.com/articles/tips-for-configuring-a-cname-record-with-your-dns-provider/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.godaddy.com/help/managing-dns-for-your-domain-names-680&quot;&gt;https://www.godaddy.com/help/managing-dns-for-your-domain-names-680&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pages.github.com&quot;&gt;https://pages.github.com&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://help.github.com/articles/adding-a-cname-file-to-your-repository/&quot;&gt;https://help.github.com/articles/adding-a-cname-file-to-your-repository/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">I wanted to try using GitHub’s Pages feature to host my website. Turns out it was very simple to do, and the best part is it’s free!</summary></entry><entry><title type="html">Boston Fishackathon 2015</title><link href="http://localhost:4000/blog/2015/07/12/boston-fishackathon-2015.html" rel="alternate" type="text/html" title="Boston Fishackathon 2015" /><published>2015-07-12T02:07:00-04:00</published><updated>2015-07-12T02:07:00-04:00</updated><id>http://localhost:4000/blog/2015/07/12/boston-fishackathon-2015</id><content type="html" xml:base="http://localhost:4000/blog/2015/07/12/boston-fishackathon-2015.html">&lt;p&gt;I recently participated in the &lt;a href=&quot;http://fishackathon.co&quot;&gt;Boston Fishackathon&lt;/a&gt;! Check out the project that my team created &lt;a href=&quot;http://challengepost.com/software/yeah-buoii&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">I recently participated in the Boston Fishackathon! Check out the project that my team created here.</summary></entry><entry><title type="html">Building a Computer</title><link href="http://localhost:4000/blog/2014/04/27/building-a-computer.html" rel="alternate" type="text/html" title="Building a Computer" /><published>2014-04-27T12:49:00-04:00</published><updated>2014-04-27T12:49:00-04:00</updated><id>http://localhost:4000/blog/2014/04/27/building-a-computer</id><content type="html" xml:base="http://localhost:4000/blog/2014/04/27/building-a-computer.html">&lt;p&gt;Successfully built my first computer! For the list of parts, go to this link - &lt;a href=&quot;http://pcpartpicker.com/p/2TYWa&quot;&gt;PC Part Picker&lt;/a&gt;. That website was extremely helpful. It checks your parts for compatibility issues and you can see computer builds that other people have posted.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2014-04-27-building-a-computer/LiPC1.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Click through for more pictures!&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2014-04-27-building-a-computer/LiPC2.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2014-04-27-building-a-computer/LiPC3.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2014-04-27-building-a-computer/LiPC4.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2014-04-27-building-a-computer/LiPC5.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2014-04-27-building-a-computer/LiPC6.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2014-04-27-building-a-computer/LiPC7.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2014-04-27-building-a-computer/LiPC8.jpg&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Successfully built my first computer! For the list of parts, go to this link - PC Part Picker. That website was extremely helpful. It checks your parts for compatibility issues and you can see computer builds that other people have posted.</summary></entry><entry><title type="html">Enhanced Steam Safari</title><link href="http://localhost:4000/blog/2014/02/03/enhanced-steam-safari.html" rel="alternate" type="text/html" title="Enhanced Steam Safari" /><published>2014-02-03T22:05:00-05:00</published><updated>2014-02-03T22:05:00-05:00</updated><id>http://localhost:4000/blog/2014/02/03/enhanced-steam-safari</id><content type="html" xml:base="http://localhost:4000/blog/2014/02/03/enhanced-steam-safari.html">&lt;p&gt;A new coding project was added to the &lt;a href=&quot;/code.html&quot;&gt;Code&lt;/a&gt; page.&lt;/p&gt;
+
+&lt;p&gt;This is a port of the &lt;a href=&quot;http://www.enhancedsteam.com/&quot;&gt;Enhanced Steam&lt;/a&gt; extension to Safari. The project is stored &lt;a href=&quot;https://github.com/jshackles/Enhanced_Steam_Safari&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">A new coding project was added to the Code page.</summary></entry><entry><title type="html">iOS Project: Paint</title><link href="http://localhost:4000/blog/2013/12/31/ios-project-paint.html" rel="alternate" type="text/html" title="iOS Project: Paint" /><published>2013-12-31T19:25:00-05:00</published><updated>2013-12-31T19:25:00-05:00</updated><id>http://localhost:4000/blog/2013/12/31/ios-project-paint</id><content type="html" xml:base="http://localhost:4000/blog/2013/12/31/ios-project-paint.html">&lt;p&gt;A new coding project was added to the &lt;a href=&quot;/code.html&quot;&gt;Code&lt;/a&gt; page.&lt;/p&gt;
+
+&lt;p&gt;This project was to create a Paint application in iOS. It was largely based on this &lt;a href=&quot;http://www.raywenderlich.com/18840/how-to-make-a-simple-drawing-app-with-uikit&quot;&gt;tutorial&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I’m considering adding some more features like &lt;i&gt;undo&lt;/i&gt; or figuring out a way to make the lines look smoother.&lt;/p&gt;
+
+&lt;p&gt;For the source code and documentation, click &lt;a href=&quot;https://github.com/moduli/Paint_iOS&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2013-12-31-ios-project-paint/paint_main.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2013-12-31-ios-project-paint/paint_settings.png&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">A new coding project was added to the Code page.</summary></entry><entry><title type="html">Coding Project: Battleship (iOS)</title><link href="http://localhost:4000/blog/2013/12/16/coding-project-battleship-ios.html" rel="alternate" type="text/html" title="Coding Project: Battleship (iOS)" /><published>2013-12-16T23:34:00-05:00</published><updated>2013-12-16T23:34:00-05:00</updated><id>http://localhost:4000/blog/2013/12/16/coding-project-battleship-ios</id><content type="html" xml:base="http://localhost:4000/blog/2013/12/16/coding-project-battleship-ios.html">&lt;p&gt;A new coding project was added to the &lt;a href=&quot;/code.html&quot;&gt;Code&lt;/a&gt; page.&lt;/p&gt;
+
+&lt;p&gt;This is an iOS project that was done for a class. The project was to recreate the game “Classic Battleships” (see &lt;a href=&quot;http://www.freeworldgroup.com/games9/gameindex/classicbattleships.htm&quot;&gt;here&lt;/a&gt;) on iOS.&lt;/p&gt;
+
+&lt;p&gt;For the source code and documentation, click &lt;a href=&quot;https://github.com/moduli/Battleship_iOS&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2013-12-16-coding-project-battleship-ios/battleship_game.jpg&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">A new coding project was added to the Code page.</summary></entry><entry><title type="html">Sublime Text</title><link href="http://localhost:4000/blog/2013/11/16/sublime-text.html" rel="alternate" type="text/html" title="Sublime Text" /><published>2013-11-16T00:18:00-05:00</published><updated>2013-11-16T00:18:00-05:00</updated><id>http://localhost:4000/blog/2013/11/16/sublime-text</id><content type="html" xml:base="http://localhost:4000/blog/2013/11/16/sublime-text.html">&lt;p&gt;&lt;a href=&quot;http://www.sublimetext.com&quot;&gt;Sublime Text&lt;/a&gt; is an awesome text editor that is fast, has a simple interface, and can be customized to your heart’s content. The following links walk through installing some of the more popular plugins.&lt;/p&gt;
+
+&lt;h2 id=&quot;must-haves&quot;&gt;Must-haves&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://sublime.wbond.net&quot;&gt;Package Control&lt;/a&gt; - A Sublime Text Package Manager. Easily installs and updates Sublime Text plugins.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/buymeasoda/soda-theme/&quot;&gt;Soda Theme&lt;/a&gt; - The Dark Theme is so tasty.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;http://blog.alexmaccaw.com/sublime-text&lt;/li&gt;
+  &lt;li&gt;http://blog.generalassemb.ly/sublime-text-3-tips-tricks-shortcuts/&lt;/li&gt;
+  &lt;li&gt;https://coderwall.com/p/ekwjca&lt;/li&gt;
+  &lt;li&gt;http://www.slant.co/topics/197/~what-are-your-favorite-plugins-for-sublime-text-2&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">Sublime Text is an awesome text editor that is fast, has a simple interface, and can be customized to your heart’s content. The following links walk through installing some of the more popular plugins.</summary></entry><entry><title type="html">Coding Project Added: Labyrinth</title><link href="http://localhost:4000/blog/2013/11/12/coding-project-added-labyrinth.html" rel="alternate" type="text/html" title="Coding Project Added: Labyrinth" /><published>2013-11-12T22:50:00-05:00</published><updated>2013-11-12T22:50:00-05:00</updated><id>http://localhost:4000/blog/2013/11/12/coding-project-added-labyrinth</id><content type="html" xml:base="http://localhost:4000/blog/2013/11/12/coding-project-added-labyrinth.html">&lt;p&gt;A new coding project was added to the &lt;a href=&quot;/code.html&quot;&gt;Code&lt;/a&gt; page.&lt;/p&gt;
+
+&lt;p&gt;This is a HTML5/Javascript project that demonstrates device orientation events. Note that the project was programmed such that it only works on a mobile device (e.g. phones, tablets).&lt;/p&gt;
+
+&lt;p&gt;To try the demo, click &lt;a href=&quot;/code/Labyrinth&quot;&gt;here&lt;/a&gt;. For the source code and documentation, click &lt;a href=&quot;https://github.com/moduli/Labyrinth&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">A new coding project was added to the Code page.</summary></entry><entry><title type="html">2 Music Projects Added</title><link href="http://localhost:4000/blog/2013/10/27/2-music-projects-added.html" rel="alternate" type="text/html" title="2 Music Projects Added" /><published>2013-10-27T18:20:00-04:00</published><updated>2013-10-27T18:20:00-04:00</updated><id>http://localhost:4000/blog/2013/10/27/2-music-projects-added</id><content type="html" xml:base="http://localhost:4000/blog/2013/10/27/2-music-projects-added.html">&lt;p&gt;I added a page to post some of my music projects (See &lt;a href=&quot;/music.html&quot;&gt;Music&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;Two songs were added. Both are covers of songs by Taking Back Sunday.&lt;/p&gt;</content><author><name></name></author><summary type="html">I added a page to post some of my music projects (See Music).</summary></entry></feed>
