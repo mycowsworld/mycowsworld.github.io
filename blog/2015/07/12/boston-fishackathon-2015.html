@@ -5,10 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Mycow's World by </title>
 
-
     <link href='https://fonts.googleapis.com/css?family=Arvo:400,700,400italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/assets/font-awesome-4.7.0/css/font-awesome.min.css">
-    <!--<link rel="stylesheet" href="/assets/css/style.css">-->
     <link rel="stylesheet" href="/assets/css/blog.css">
 
     <script src="/assets/js/scale.fix.js"></script>
@@ -23,38 +21,37 @@
     <div class="wrapper">
       <!-- HEADER -->
       <header>
-        <h1 class="header"><a class="header" href="http://mycowsworld.github.io">Mycow's World</a></h1>
+        <h1 class="header"><a class="header" href="">Mycow's World</a></h1>
         <p class="header">Hi, I'm Michael Li. Welcome to my world.
 </p>
 
-        <!-- icons -->
-        <a class="header" href="http://www.github.com/moduli" target="_blank"><i class="fa fa-github fa-4x fa-hover" aria-hidden="true"></i></a>
-        <a class="header" href="http://www.linkedin.com/in/moduli" target="_blank"><i class="fa fa-linkedin-square fa-4x fa-hover" aria-hidden="true"></i></a>
-        <a class="header" href="mailto:mycowsworld@gmail.com"><i class="fa fa-envelope-square fa-4x fa-hover" aria-hidden="true"></i></a>
-
-
-        <ul>
-          
-        </ul>
-
         <!-- site links -->
-        <ul>
-          <li><a class="site-links" href="http://mycowsworld.github.io">Home</a></li>
-          <li><a class="site-links" href="http://mycowsworld.github.io/about">About</a></li>
-          <li><a class="site-links" href="http://mycowsworld.github.io/blog">Blog</a></li>
-          <li><a class="site-links" href="#">Projects</a></li>
-        </ul>
+        <div id="site-links">
+            <ul>
+              <li><a class="site-links" href="">Home</a></li>
+              <li><a class="site-links" href="/blog">Blog</a></li>
+              <li><a class="site-links" href="/projects">Projects</a></li>
+              <li><a class="site-links" href="/about">About</a></li>
+            </ul>
+        </div>
+
+        <!-- social icons -->
+        <div>
+        <a class="social-links fa-hover" href="http://www.github.com/moduli" target="_blank"><i class="fa fa-github fa-3x fa-hover" aria-hidden="true"></i></a>
+        <a class="social-links fa-hover" href="http://www.linkedin.com/in/moduli" target="_blank"><i class="fa fa-linkedin-square fa-3x fa-hover" aria-hidden="true"></i></a>
+        <a class="social-links fa-hover" href="mailto:mycowsworld@gmail.com"><i class="fa fa-envelope-square fa-3x fa-hover" aria-hidden="true"></i></a>
+        </div>
 
         
 
         
       </header>
 
-
       <!-- SECTION -->
       <section>
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-
+    <!-- add link to go to back to blog -->
+    
   <div class="post-content" itemprop="articleBody">
 
     <h1 class="post-title" itemprop="name headline">Boston Fishackathon 2015</h1>
@@ -62,7 +59,7 @@
         <time datetime="2015-07-12T02:07:00-04:00" itemprop="datePublished">Jul 12, 2015</time>
         
     </p>
-    
+
     <p>I recently participated in the <a href="http://fishackathon.co">Boston Fishackathon</a>! Check out the project that my team created <a href="http://challengepost.com/software/yeah-buoii">here</a>.</p>
 
   </div>
@@ -72,6 +69,10 @@
 
   
 </article>
+
+<script type="text/javascript">
+	$(".site-links:contains('Blog'):parent").addClass("active-link");
+</script>
 
       </section>
 

@@ -1,4 +1,16 @@
-cd <blog>
-bundle exec jekyll serve
+# TEST ON LOCAL SERVER
+cd <blog>					// <>/mycows-world
+bundle exec jekyll serve 	// hosts to http://localhost:4000
 	- files in <blog> get read in
 	- output folder = _site
+	- check "url" parameter in _config.yml to test on local server, set url to ""
+
+# TO PUSH TO GITHUB
+cd <blog>
+jekyll build --destination <github repo>
+	- e.g. jekyll build --destination ../mycowsworld.github.io
+	- set "url" parameter in _config.yml to http://mycowsworld.github.io
+cd <github repo>
+git add --all
+git commit -m "<commit message>"
+git push -u origin master
