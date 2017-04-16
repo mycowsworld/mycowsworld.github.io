@@ -14,3 +14,16 @@ cd <github repo>
 git add --all
 git commit -m "<commit message>"
 git push -u origin master
+
+
+
+https://codinfox.github.io/dev/2015/03/06/use-tags-and-categories-in-your-jekyll-based-github-pages/
+https://mademistakes.com/articles/using-jekyll-2016/
+
+https://mademistakes.com/articles/jekyll-static-comments/
+https://jason.pureconcepts.net/2015/02/migrating-from-octopress-to-jekyll/
+https://eduardoboucas.com/blog/2014/12/07/including-and-managing-images-in-jekyll.html
+http://www.rampmeupscotty.com/blog/2015/01/22/migrating-from-octopress-to-jekyll/
+http://www.panozzaj.com/blog/2014/06/12/migrating-from-octopress-to-jekyll/
+
+http://charliepark.org/tags-in-jekyll/

@@ -1,4 +1,4 @@
-/* ============= 
+/* =============
 
 DEFAULT.HTML
 
@@ -12,7 +12,7 @@ p.header {
 	margin-bottom: 10px;
 }
 
-/* 	============= 
+/* 	=============
 	SOCIAL MEDIA LINKS
 	============= 		*/
 a.social-links {
@@ -20,15 +20,20 @@ a.social-links {
 	padding-right: 10px;
 	text-decoration: none;
 	float: left;
+
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
 
 .fa-hover:hover, a.header:hover {
-	color: #C30000;
+	/*color: #C30000;*/
+  color: #F08080;
 	text-decoration: none;
 }
 
-/* 	============= 
+/* 	=============
 	SITE NAV LINKS
 	============= 		*/
 #site-links {
@@ -36,7 +41,7 @@ a.social-links {
 	padding-top: 15px;
 }
 
-a.site-links {	
+a.site-links {
 	display: block;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: normal;
@@ -53,8 +58,12 @@ a.site-links {
 	border-radius: 4px;
 	border: 1px solid #0D0D0D;
 	-webkit-box-shadow: inset 0px 1px 1px 0 #e90226;
-	box-shadow: inset 0px 1px 1px 0 #e90226; 
+	box-shadow: inset 0px 1px 1px 0 #e90226;
 	*/
+
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 
 	width: 132px;
 	height: 15px;
@@ -65,7 +74,7 @@ a.site-links {
 
 a.site-links:hover {
 	text-decoration: none;
-	background: #C3001D;
+	background: #F08080;
 	/*
 	background: -moz-linear-gradient(top, #C3001D 0%, #950119 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f8f8f8), color-stop(100%, #dddddd));
@@ -78,15 +87,11 @@ a.site-links:hover {
 
 a.site-links.active-link {
 	/*border: 1px solid #ffffff;*/
-	background: darkgrey;
+	background: #5D6D7E;
 }
 
-
-
-/* ============= 
-
-HOME.HTML
-
+/* =============
+BLOG
 ============= */
 
 .post-list {
@@ -94,12 +99,100 @@ HOME.HTML
 	padding-left: 0;
 }
 
+div.pagination {
+  text-align: center;
+  padding-top: 15px;
+}
+
+a.blognav {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 10pt;
+  color: white;
+  
+  background: #5D6D7E;
+  border-radius: 4px;
+
+  padding: .3rem .5rem;
+  
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+a.blognav:hover {
+  background: #95A5A6;
+  text-decoration: none;
+}
+
+.pagenav {
+  margin-left: .5rem;
+  margin-right: .5rem;
+}
+
+span.blognav {
+  color: #D6DBDF;
+  padding: .3rem .5rem;
+
+  border-radius: 4px;
+  border: 1px solid #D6DBDF;
+  
+}
+
+.image-wrapper {
+  /*text-align: center;*/
+  margin-bottom: 10px;
+
+}
+
+.image-wrapper img {
+  margin: 0px 0px 0px 0px;
+}
+
+.image-caption {
+  color: #5D6D7E;    
+}
 
 
+/* =============
+TAGS
+============= */
+
+ul.tag {
+  display: inline;
+  padding-left: 5px;
+}
+
+li.tag {
+  display: inline;
+}
+
+a.tag {
+  display: inline-block;
+
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 10pt;
+  color: white;
+  
+  background: #AF0011;
+  padding: 0 .5rem;
+  margin-right: .5rem;
+  margin-bottom: .5rem;
+  border-radius: 4px;
+  
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+a.tag:hover {
+    text-decoration: none;
+    background-color: #F08080;
+}
 
 
-
-/* ============= 
+/* =============
 
 FROM DINKY THEME
 
@@ -486,7 +579,7 @@ td {
 
 /* Wrapper */
 .wrapper {
-  	width: 960px; 
+  	width: 960px;
 	margin: auto;
 }
 
@@ -498,7 +591,7 @@ header {
   float: left;
   position: fixed;
   border: 1px solid #000;
-  
+
   padding: 34px 25px 22px 50px;
   margin: 30px 25px 0 0;
   -webkit-font-smoothing: antialiased; }
@@ -602,7 +695,7 @@ footer {
   	border-top-left-radius: 0px;
   	border-bottom-left-radius: 0px;
   	padding-bottom: 75px;
-    padding-right: 320px; 
+    padding-right: 320px;
   }
 
   section {
@@ -623,7 +716,7 @@ footer {
     word-wrap: break-word; }
 
   header {
-    padding: 10px 20px 50px;
+    padding: 10px 20px 60px;
     margin-right: 0; }
 
   section {
@@ -641,20 +734,21 @@ footer {
     #site-links li {
     	display: inline-block;
     	margin-right: 20px;
+    	margin-bottom: 10px;
     }
 
-    a.site-links {	
+    a.site-links {
 		display: table-cell;
 		text-align: center;
 		vertical-align: middle;
-		
+
 		width: 60px;
 		height: 60px;
 	}
 
   	header ul, header p.view {
-    	position: static; 
-    } 
+    	position: static;
+    }
 }
 @media print, screen and (max-width: 480px) {
   header ul li.download {

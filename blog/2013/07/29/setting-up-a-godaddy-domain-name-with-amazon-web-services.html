@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Mycow's World by </title>
+    <title>Mycow's World</title>
 
     <link href='https://fonts.googleapis.com/css?family=Arvo:400,700,400italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/assets/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -11,6 +11,7 @@
 
     <script src="/assets/js/scale.fix.js"></script>
     <script src="/assets/js/jquery-3.2.0.min.js"></script>
+    <script src="http://mycowsworld.disqus.com/count.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -21,17 +22,17 @@
     <div class="wrapper">
       <!-- HEADER -->
       <header>
-        <h1 class="header"><a class="header" href="">Mycow's World</a></h1>
+        <h1 class="header"><a class="header" href="http://mycowsworld.github.io">Mycow's World</a></h1>
         <p class="header">Hi, I'm Michael Li. Welcome to my world.
 </p>
 
         <!-- site links -->
         <div id="site-links">
             <ul>
-              <li><a class="site-links" href="">Home</a></li>
-              <li><a class="site-links" href="/blog">Blog</a></li>
-              <li><a class="site-links" href="/projects">Projects</a></li>
-              <li><a class="site-links" href="/about">About</a></li>
+                <li><a class="site-links" href="http://mycowsworld.github.io">Blog</a></li>
+                <li><a class="site-links" href="http://mycowsworld.github.io/projects">Projects</a></li>
+                <li><a class="site-links" href="http://mycowsworld.github.io/about">About</a></li>
+                <li><a class="site-links" href="http://mycowsworld.github.io/archive">Archive</a></li>
             </ul>
         </div>
 
@@ -51,33 +52,57 @@
       <section>
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <!-- add link to go to back to blog -->
-    
+
   <div class="post-content" itemprop="articleBody">
 
     <h1 class="post-title" itemprop="name headline">Setting Up a GoDaddy Domain Name with Amazon Web Services</h1>
-    <p class="post-meta">
+
+    <div class="post-meta">
+
+        <!-- post meta data -->
         <time datetime="2013-07-29T22:55:00-04:00" itemprop="datePublished">Jul 29, 2013</time>
         
-    </p>
 
-    <p>One day, I decided I wanted to start a website. So then… now what? The following post describes the steps I took to purchase a domain name and get it set up with Amazon’s web hosting services.</p>
+        <!-- tags -->
+        <ul class="tag">
+            
+            <li class="tag">
+                <a class="tag" href="http://mycowsworld.github.io/tags/tutorial"> Tutorial </a>
+            </li>
+            
+            <li class="tag">
+                <a class="tag" href="http://mycowsworld.github.io/tags/website"> Website </a>
+            </li>
+            
+            <li class="tag">
+                <a class="tag" href="http://mycowsworld.github.io/tags/aws"> AWS </a>
+            </li>
+            
+        </ul>
+
+        <p></p>
+    </div>
+
+    <!-- post content -->
+    <div class="content">
+        <p>One day, I decided I wanted to start a website. So then… now what? The following post describes the steps I took to purchase a domain name and get it set up with Amazon’s web hosting services.</p>
 
 <!-- more -->
 
 <h2 id="step-1-register-for-a-domain-name">Step 1: Register for a domain name</h2>
 <p>Go to http://www.godaddy.com/ and purchase a domain name (e.g. mycowsworld.com)</p>
 
-<p>This reserves a name that people will use to access your website. Now you’ll need a place to store the files for your website.</p>
+<p>This reserves a name that people will use to access your website. Now, you’ll need a place to store the files for your website.</p>
 
 <h2 id="step-2-sign-up-for-amazon-web-services-aws">Step 2: Sign up for Amazon Web Services (AWS)</h2>
 <p>Go to https://aws.amazon.com/ and sign up for an account.</p>
 
-<p>Amazon has some nice services for cloud computing. One of these services can be used for website hosting (Amazon S3). AWS costs are scaled based on usage. My current costs are about 50 cents a month to host this blog.</p>
+<p>Amazon has some nice services for cloud computing. One of these services can be used for website hosting (Amazon S3). AWS costs are scaled based on usage (i.e. how much data you store on their servers). My current costs are about 50 cents/month to host this blog.</p>
 
 <h2 id="step-3-setup-amazon-s3-simple-storage-service">Step 3: Setup Amazon S3 (Simple Storage Service)</h2>
-<p>In S3, you create “buckets” that will be used to store data. Each bucket can be configured individually, such as changing who has permissions to access a particular bucket.</p>
+<p>Amazon S3 is an online data storage service, which is part of the AWS suite of tools. In S3, you create “buckets” that will be used to store data. Each bucket can be configured individually, such as changing who has permissions to access a particular bucket.</p>
 
-<p>In this case, we’ll create two buckets: one for mywebsite.com and the other for www.mywebsite.com. We’ll configure it so that the content will be stored in mywebsite.com and that requests for www.mywebsite.com will be redirected to mywebsite.com.</p>
+<p>In this case, we’ll create two buckets: one for “mywebsite.com” and the other for “www.mywebsite.com”. We’ll configure it so that the content will be stored in mywebsite.com and that requests for www.mywebsite.com will be redirected to mywebsite.com.</p>
 
 <ol>
   <li>Click <strong>My Account / Console</strong> on the top-right of the window and select <strong>AWS Management Console</strong></li>
@@ -91,12 +116,12 @@
 <li>Click <strong>Upload</strong> at the top-left of the screen</li>
 <li>Click <strong>Add Files</strong> on the pop-up that appears and select the various website files. Multiple files can be selected. (If you do not have website files, you can create a test file with the following code)
 
-<figure class="highlight"><pre><code class="language-none" data-lang="none">&lt;!DOCTYPE HTML&gt;
-&lt;html&gt;
-&lt;body&gt;
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE HTML&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;body&gt;</span>
 	Hello World
-&lt;/body&gt;
-&lt;/html&gt;</code></pre></figure>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre></figure>
 </li>
 <li>Click <strong>Start Upload</strong> to upload the files to the bucket</li>
 </ol>
@@ -199,7 +224,11 @@
 <h2 id="what-is-happening">What is happening?</h2>
 <p>The following image helps describe the process when a user enters an address into the web browser.</p>
 
-<p><img src="/assets/posts/2013-07-29-setting-up-a-godaddy-domain-name-with-amazon-web-services/dns_flow_chart.jpg" /></p>
+<div class="image-wrapper">
+    <a href="/assets/posts/2013-07-29-setting-up-a-godaddy-domain-name-with-amazon-web-services/dns_flow_chart.jpg" title="">
+        <img src="/assets/posts/2013-07-29-setting-up-a-godaddy-domain-name-with-amazon-web-services/dns_flow_chart.jpg" alt="" />
+    </a>
+</div>
 
 <ul>
   <li>There are 13 Root Name Servers spread across the world. These servers parse the request for the top level domain (e.g. .com, .net, etc) and pass to the appropriate server</li>
@@ -222,10 +251,30 @@
   <li><a href="http://dyn.com/blog/dns-why-its-important-how-it-works/">http://dyn.com/blog/dns-why-its-important-how-it-works/</a></li>
 </ul>
 
+    </div>
   </div>
 
   
     
+
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://mycowsworld.github.io/blog/2013/07/29/setting-up-a-godaddy-domain-name-with-amazon-web-services.html';
+      this.page.identifier = 'http://mycowsworld.github.io/blog/2013/07/29/setting-up-a-godaddy-domain-name-with-amazon-web-services.html';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+
+      s.src = 'https://mycowsworld.disqus.com/embed.js';
+
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
 
   
 </article>
@@ -239,6 +288,7 @@
       <!-- FOOTER -->
       <footer>
         <p><small>Hosted on <a href="https://pages.github.com" target="_blank">GitHub Pages</a> using the <a href="https://github.com/pages-themes/dinky" target="_blank">Dinky</a> theme</small></p>
+        <p class="rss-subscribe">Subscribe via <a href="/feed.xml">RSS</a></p>
       </footer>
     </div>
 
